@@ -1,0 +1,33 @@
+/* Chat bubbles */
+.stChatMessage {
+    background-color: #111111 !important;
+    border-radius: 16px;
+    padding: 10px 15px;
+    margin-bottom: 10px;
+}
+
+/* User input bar */
+.stChatInputContainer {
+    border-radius: 50px !important;
+    background: #222222 !important;
+}
+
+/* Page Title */
+h1 {
+    font-family: 'SF Pro Display', sans-serif;
+    font-weight: 700 !important;
+    letter-spacing: -1px;
+}
+
+/* Cards */
+.stMarkdown, .stMetric {
+    padding: 15px 20px;
+    background: #1a1a1a;
+    border-radius: 14px;
+    box-shadow: 0 0 20px rgba(255,255,255,0.03);
+}
+
+/* Sidebar */
+.css-1lcbmhc {
+    background-color: #0d0d0d !important;
+}
