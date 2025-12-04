@@ -5,8 +5,6 @@ st.set_page_config(page_title="SpendWise", page_icon="💰", layout="wide")
 
 st.title("💰 SpendWise – Your Spending Assistant")
 
-if "cleaned" not in st.session_state:
-    st.session_state.cleaned = clean_data()
 
 df = load_transactions()
 
