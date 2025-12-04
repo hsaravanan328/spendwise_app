@@ -15,9 +15,9 @@ st.markdown("""
 ### Welcome to SpendWise  
 Select a page from the sidebar to get started:
 
-- 💬 Ask SpendWise  
-- 📝 Budget Planner  
-- 📊 Category Dashboard  
-- 🏪 Spending Insights
-- 💸 Spending Forecast  
+- 📝 Budget Planner
+- 📊 Category Dashboard          
+- 💭 Sentiment Analysis
+- 💸 Spending Forecast   
+- 🏪 Spending Insights  
 """)
