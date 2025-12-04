@@ -63,4 +63,4 @@ Navigate to `http://localhost:8501` in your web browser to start using SpendWise
 
 ## ▶️ Hosted Site
 
-Visit `https://spendwiseapp.streamlit.app/` in your web browser to start using SpendWise App.
+Visit https://spendwiseapp.streamlit.app/ in your web browser to start using SpendWise App.
