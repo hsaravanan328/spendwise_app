@@ -196,19 +196,19 @@ st.write("### Bucket Breakdown")
 st.dataframe(bucket_summary, hide_index=True)
 
 # =============================
-# 4️⃣ Detailed Table (Bucket colored)
+# Detailed Table (Bucket colored)
 # =============================
-
 st.markdown("### 🧾 Detailed Transactions")
 
-num_rows = st.slider("Rows to display:", 5, 50, 15)
+num_rows = st.slider("Rows to display:", 5, 100, 15)
 
+# Limit rows FIRST
 table_df = filtered_df[
     ["Details", "Posting Date", "Description", "Amount_str", "Balance_str", "Bucket"]
 ].rename(columns={
     "Amount_str": "Amount",
     "Balance_str": "Balance"
-})
+}).sort_values("Posting Date", ascending=False).head(num_rows)
 
 # ----- Color map for buckets -----
 bucket_colors = {
@@ -224,5 +224,11 @@ def highlight_row(row):
     color = bucket_colors.get(row["Bucket"], "#ffffff")
     return [f"background-color: {color}; color:black;"] * len(row)
 
-styled_table = table_df.style.apply(highlight_row, axis=1)
-st.dataframe(styled_table, hide_index=True)
+styled = table_df.style.apply(highlight_row, axis=1)
+
+st.dataframe(
+    styled,
+    hide_index=True,
+    use_container_width=True,
+)
+
