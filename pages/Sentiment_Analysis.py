@@ -6,61 +6,6 @@ import pandas as pd
 st.set_page_config(page_title="Sentiment Analysis", layout="wide")
 
 # -----------------------------
-# Load HuggingFace model once
-# -----------------------------
-@st.cache_resource
-def load_model():
-    # Load a model trained for 3-class sentiment analysis (positive, neutral, negative)
-    return pipeline(
-        "sentiment-analysis", model="cardiffnlp/twitter-roberta-base-sentiment"
-    )
-
-model = load_model()
-
-# -----------------------------
-# UI
-# -----------------------------
-st.title("💭 Sentiment Analysis")
-
-st.subheader("📝 Analyze Custom Text")
-st.info(
-    "This section uses a RoBERTa model trained for 3-class sentiment analysis (Positive, Negative, Neutral)."
-)
-text = st.text_area(
-    "Type something...",
-    height=150,
-    placeholder="Example: 'I am happy today!'",
-)
-
-# -----------------------------
-# Analyze single text input
-# -----------------------------
-if st.button("Analyze Text"):
-    if text.strip():
-        result = model(text)[0]
-        raw_label = result["label"]
-        score = result["score"]
-
-        # Map the model's raw output (e.g., 'LABEL_2') to a friendly name and emoji
-        if raw_label == "LABEL_2":
-            label = "POSITIVE"
-            emoji = "😊"
-        elif raw_label == "LABEL_0":
-            label = "NEGATIVE"
-            emoji = "😞"
-        else:  # Assumes LABEL_1 or any other case is Neutral
-            label = "NEUTRAL"
-            emoji = "😐"
-
-        st.success(f"**Sentiment:** {label} {emoji}")
-        st.write(f"Confidence: `{score:.3f}`")
-
-    else:
-        st.warning("Please enter text.")
-
-st.markdown("---")
-
-# -----------------------------
 # Sentiment for transaction descriptions
 # -----------------------------
 st.subheader("💰 Financial Sentiment for Transactions")
