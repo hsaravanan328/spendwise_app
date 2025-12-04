@@ -1,8 +1,7 @@
 import streamlit as st
 st.set_page_config(page_title="SpendWise", page_icon="💰", layout="wide")
 
-from utils.data_cleaning import clean_data
-from utils.loader import load_transactions
+
 
 st.title("💰 SpendWise – Your Spending Assistant")
 
