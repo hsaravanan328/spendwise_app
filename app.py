@@ -18,5 +18,6 @@ Select a page from the sidebar to get started:
 - 💬 Ask SpendWise  
 - 📝 Budget Planner  
 - 📊 Category Dashboard  
-- 🏪 Spending Insights  
+- 🏪 Spending Insights
+- 💸 Spending Forecast  
 """)
