@@ -21,6 +21,7 @@ The project is organized into the following directories:
 -   **/agents/**: Holds the core business logic for analysis, categorization, and financial coaching.
 -   **/utils/**: Includes utility functions for data loading, cleaning, configuration, and styling.
 -   **/data/**: The default directory for storing transaction data.
+  
 `note: make sure your data has the following columns: ["Details", "Posting Date", "Description", "Amount", "Balance"]`
 -   **styles.css**: Custom CSS for visual styling of the application.
 -   **requirements.txt**: A list of all Python dependencies required to run the project.
